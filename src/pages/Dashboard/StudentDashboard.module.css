@@ -1,0 +1,483 @@
+/* src/pages/StudentDashboard.module.css */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #0f1420;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #1a1f2c;
+  border-right: 1px solid #2f3647;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+}
+
+.logoMark {
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navItem {
+  padding: 0.8rem 1rem;
+  color: #9ca3af;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navItem:hover {
+  background: #2f3647;
+  color: white;
+}
+
+.navItem.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #2f3647;
+  border-bottom: 1px solid #2f3647;
+  margin-bottom: 1rem;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.userName {
+  color: white;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.userRole {
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+.logoutBtn {
+  padding: 0.8rem;
+  background: transparent;
+  border: 1px solid #2f3647;
+  color: #ef4444;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.headerSubtitle {
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+.streakBadge {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f59e0b;
+}
+
+.streakIcon {
+  font-size: 1.2rem;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+}
+
+.statIcon {
+  font-size: 2rem;
+}
+
+.statCard h3 {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.statNumber {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Course Card */
+.courseCard {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.courseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.courseHeader h3 {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.courseProgress {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.progressBar {
+  height: 8px;
+  background: #2f3647;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.phasesGrid {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.phaseItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #9ca3af;
+}
+
+.phaseDot {
+  width: 8px;
+  height: 8px;
+  background: #2f3647;
+  border-radius: 50%;
+}
+
+.activePhase {
+  background: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.activePhaseText {
+  color: white;
+  font-weight: 500;
+}
+
+.currentPhase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.currentPhase p {
+  color: #9ca3af;
+}
+
+.currentPhase strong {
+  color: white;
+}
+
+.continueBtn {
+  padding: 0.6rem 1.2rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.continueBtn:hover {
+  background: #2563eb;
+  transform: translateX(2px);
+}
+
+/* Two Column Layout */
+.twoColumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Activity List */
+.activityList {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.activityItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #2f3647;
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.activityIcon {
+  font-size: 1.3rem;
+}
+
+.activityContent {
+  flex: 1;
+}
+
+.activityContent p {
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.activityTime {
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+/* Deadline List */
+.deadlineList {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.deadlineItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #2f3647;
+}
+
+.deadlineItem:last-child {
+  border-bottom: none;
+}
+
+.deadlineDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50px;
+}
+
+.deadlineDay {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+}
+
+.deadlineMonth {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.deadlineContent {
+  flex: 1;
+}
+
+.deadlineContent h4 {
+  color: white;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.deadlineContent p {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.deadlineBadge {
+  padding: 0.3rem 0.8rem;
+  background: #f59e0b;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* Quick Actions */
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.quickActionBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 8px;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.quickActionBtn:hover {
+  background: #2f3647;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.quickActionBtn span {
+  font-size: 1.2rem;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .twoColumn {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .quickActions {
+    grid-template-columns: 1fr;
+  }
+}

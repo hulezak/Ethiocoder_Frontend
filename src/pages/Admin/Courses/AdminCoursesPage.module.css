@@ -1,0 +1,666 @@
+/* src/pages/admin/AdminCoursesPage.module.css */
+
+/* ===== HEADER SECTION ===== */
+.header {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  padding-bottom: 1.5rem;
+}
+
+.header h1 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #a0a8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+.createBtn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 10px 20px -8px rgba(16, 185, 129, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.createBtn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.createBtn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.createBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -8px rgba(16, 185, 129, 0.6);
+}
+
+.createBtn:active {
+  transform: translateY(-1px);
+}
+
+/* ===== COURSE GRID ===== */
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+  padding: 0.5rem 0;
+}
+
+/* ===== COURSE CARD ===== */
+.courseCard {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 24px;
+  padding: 1.8rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.courseCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #10b981);
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.courseCard:hover::before {
+  transform: translateX(0);
+}
+
+.courseCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #3b82f6;
+  box-shadow: 0 20px 40px -12px rgba(59, 130, 246, 0.5);
+  background: #1e2433;
+}
+
+.courseCard h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+.courseCard h3::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.courseCard:hover h3::after {
+  width: 60px;
+}
+
+.courseDescription {
+  color: #a0a8b8;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* ===== COURSE STATS ===== */
+.courseStats {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.courseStats span {
+  color: #d1d5db;
+  font-size: 0.85rem;
+  background: #1e2433;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  border: 1px solid #2f3647;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.courseStats span:hover {
+  background: #2a3142;
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+/* ===== COURSE ACTIONS ===== */
+.courseActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.statusBadge {
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.statusBadge.approved {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.statusBadge:not(.approved) {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+}
+
+.viewBtn {
+  background: transparent;
+  color: #3b82f6;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #3b82f6;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.viewBtn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #3b82f6;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  z-index: -1;
+}
+
+.viewBtn:hover {
+  color: white;
+}
+
+.viewBtn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.viewPhaseslink {
+  background: #2a3142;
+  color: #a0a8b8;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #2f3647;
+  display: inline-block;
+}
+
+.viewPhaseslink:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  background: #1a1f2c;
+  padding: 2.5rem;
+  border-radius: 32px;
+  max-width: 550px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(59, 130, 246, 0.2) inset;
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.modalContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #10b981);
+  border-radius: 32px 32px 0 0;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalContent h2 {
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff, #a0a8b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.modalContent h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 3px;
+}
+
+/* ===== FORM STYLES ===== */
+.formGroup {
+  margin-bottom: 1.8rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #a0a8b8;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: #1e2433;
+  border: 2px solid #2f3647;
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.formGroup input:hover,
+.formGroup select:hover,
+.formGroup textarea:hover {
+  border-color: #3f4758;
+  background: #232a38;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #1e2433;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.formGroup input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.8rem;
+  accent-color: #3b82f6;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* ===== MODAL ACTIONS ===== */
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2.5rem;
+}
+
+.modalActions button {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.modalActions button[type="submit"] {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.4);
+}
+
+.modalActions button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -4px rgba(59, 130, 246, 0.6);
+}
+
+.modalActions button[type="button"] {
+  background: #2f3647;
+  color: #a0a8b8;
+  border: 1px solid #3f4758;
+}
+
+.modalActions button[type="button"]:hover {
+  background: #3f4758;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ===== LOADING STATE ===== */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.loading::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 3px solid #2f3647;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  position: absolute;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== EMPTY STATE ===== */
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #1a1f2c;
+  border-radius: 24px;
+  border: 2px dashed #2f3647;
+}
+
+.emptyState p {
+  color: #a0a8b8;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.emptyState button {
+  background: #3b82f6;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.emptyState button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.5);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .courseGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .header h1::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .createBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .courseGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalContent {
+    padding: 1.8rem;
+    width: 95%;
+  }
+
+  .modalActions {
+    flex-direction: column;
+  }
+
+  .modalActions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .courseCard {
+    padding: 1.5rem;
+  }
+
+  .courseActions {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .viewBtn,
+  .viewPhaseslink {
+    text-align: center;
+  }
+
+  .courseStats {
+    justify-content: center;
+  }
+}
+
+/* ===== SCROLLBAR STYLING ===== */
+.modalContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+  background: #1e2433;
+  border-radius: 8px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background: #3f4758;
+  border-radius: 8px;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+  background: #4f5a6f;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ===== TOOLTIP STYLES ===== */
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+}
+
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.4rem 0.8rem;
+  background: #1e2433;
+  color: #ffffff;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  border: 1px solid #2f3647;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 10;
+}
+
+[data-tooltip]:hover:before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-8px);
+}

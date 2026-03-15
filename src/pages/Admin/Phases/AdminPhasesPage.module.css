@@ -1,0 +1,566 @@
+/* src/pages/admin/AdminPhasesPage.module.css */
+.header {
+  margin-bottom: 2rem;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.backBtn {
+  background: none;
+  border: 1px solid #2f3647;
+  color: #9ca3af;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.backBtn:hover {
+  background: #2f3647;
+  color: white;
+}
+
+.header h1 {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.courseDescription {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+.createBtn {
+  background: #10b981;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.createBtn:hover {
+  background: #059669;
+}
+
+/* Phases Container */
+.phasesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.phaseCard {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.phaseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.phaseTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.expandIcon {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  width: 20px;
+}
+
+.phaseTitle h3 {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.weekCount {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.phaseActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.addWeekBtn {
+  background: #3b82f6;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.addWeekBtn:hover {
+  background: #2563eb;
+}
+
+.editBtn {
+  background: #48bb78;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.editBtn:hover {
+  background: #38a169;
+}
+
+.deleteBtn {
+  background: #f56565;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.deleteBtn:hover {
+  background: #e53e3e;
+}
+
+.phaseDescription {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+/* Weeks */
+.weeksContainer {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid #2f3647;
+}
+
+.weeksContainer h4 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.weekCard {
+  background: #1e2433;
+  border: 1px solid #2f3647;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.weekHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.weekTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.weekTitle h5 {
+  color: #d1d5db;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.weekActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.addVideoBtn {
+  background: #9b59b6;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.addVideoBtn:hover {
+  background: #8e44ad;
+}
+
+.noWeeks {
+  color: #6b7280;
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+
+/* Videos */
+.videosContainer {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.videosContainer h6 {
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.videoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: #1a1f2c;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.videoInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.videoTitle {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.videoLink {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.videoLink:hover {
+  text-decoration: underline;
+}
+
+.videoDuration {
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+.deleteVideoBtn {
+  background: none;
+  border: none;
+  color: #f56565;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+
+.deleteVideoBtn:hover {
+  color: #e53e3e;
+}
+
+.noVideos {
+  color: #6b7280;
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #1a1f2c;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid #2f3647;
+}
+
+.modalContent h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+/* Form */
+.formGroup {
+  margin-bottom: 1.2rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.6rem;
+  background: #1e2433;
+  border: 1px solid #2f3647;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.modalActions button {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.modalActions button[type="submit"] {
+  background: #3b82f6;
+  color: white;
+}
+
+.modalActions button[type="submit"]:hover {
+  background: #2563eb;
+}
+
+.modalActions button[type="button"] {
+  background: #2f3647;
+  color: #d1d5db;
+}
+
+.modalActions button[type="button"]:hover {
+  background: #3f4758;
+}
+
+/* Existing videos in modal */
+.existingVideos {
+  margin-top: 2rem;
+  border-top: 1px solid #2f3647;
+  padding-top: 1rem;
+}
+
+.existingVideos h3 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.existingVideos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.existingVideos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: #1e2433;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+}
+
+.existingVideos li button {
+  background: #f56565;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* No data */
+.noData {
+  text-align: center;
+  padding: 3rem;
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  color: #9ca3af;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .phaseHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .phaseActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .weekHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .weekActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .videoInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+}
+/* Drag and drop */
+.dragHandle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem;
+  color: #4b5563;
+  cursor: grab;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.dragHandle:hover {
+  opacity: 1;
+}
+
+.phaseCard {
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* Loading states */
+.loadingText {
+  color: #6b7280;
+  font-style: italic;
+  padding: 1rem;
+  text-align: center;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Video preview */
+.videoPreview {
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #2f3647;
+}
+
+.modalPreview {
+  margin: 1rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #2f3647;
+}
+
+/* Existing videos list */
+.existingVideos {
+  margin-top: 1.5rem;
+  border-top: 1px solid #2f3647;
+  padding-top: 1rem;
+}
+
+.existingVideos h3 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.existingVideos ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.existingVideos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: #1e2433;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+}
+
+.existingVideos li button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.existingVideos li button:hover {
+  background: #dc2626;
+}

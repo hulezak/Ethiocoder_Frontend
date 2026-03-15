@@ -1,0 +1,236 @@
+/* src/pages/Login.module.css */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #0f1420;
+}
+
+/* Left Panel */
+.leftPanel {
+  flex: 1;
+  background: linear-gradient(135deg, #1a1f2c 0%, #0f1420 100%);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.leftPanel::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #3b82f6;
+  filter: blur(100px);
+  opacity: 0.15;
+  top: -100px;
+  right: -100px;
+  border-radius: 50%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.logoMark {
+  width: 44px;
+  height: 44px;
+  background: #3b82f6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  margin-bottom: 3rem;
+}
+
+.quote {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #d1d5db;
+  font-style: italic;
+  max-width: 400px;
+}
+
+/* Right Panel */
+.rightPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #1a1f2c;
+}
+
+.form {
+  width: 100%;
+  max-width: 380px;
+  background: #1e2433;
+  padding: 2.5rem;
+  border-radius: 24px;
+  border: 1px solid #2f3647;
+}
+
+.form h2 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.field label {
+  display: block;
+  color: #d1d5db;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: #1e2433;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: white;
+  transition: all 0.2s;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.field input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button {
+  width: 100%;
+  padding: 0.9rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.button:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.link a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .leftPanel {
+    padding: 3rem 2rem;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .rightPanel {
+    padding: 2rem;
+  }
+  
+  .form {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .leftPanel {
+    padding: 2rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .logoMark {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+  
+  .form {
+    padding: 1.5rem;
+  }
+  
+  .form h2 {
+    font-size: 1.5rem;
+  }
+}

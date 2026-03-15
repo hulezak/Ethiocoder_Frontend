@@ -1,0 +1,350 @@
+/* src/components/Navbar.module.css - Clean Version */
+
+:root {
+  --nav-bg: rgba(15, 20, 30, 0.95);
+  --nav-scrolled: rgba(10, 15, 25, 0.98);
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --border-light: rgba(255, 255, 255, 0.1);
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --danger: #ef4444;
+  --danger-bg: rgba(239, 68, 68, 0.1);
+}
+
+/* Main Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  padding: 1rem 5%;
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.2s ease;
+}
+
+.navbar.scrolled {
+  padding: 0.7rem 5%;
+  background: var(--nav-scrolled);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbarContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logoMark {
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.logoText {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.logoTextAcademy {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.25rem;
+}
+
+/* Desktop Navigation */
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Register Button */
+.registerBtn {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.registerBtn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Apply Button */
+.applyBtn {
+  text-decoration: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.applyBtn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* User Menu */
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--border-light);
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.logoutBtn {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background: var(--danger-bg);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* Mobile Menu Button */
+.mobileMenuBtn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.mobileMenuBtn span {
+  width: 28px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+/* Mobile Navigation */
+.mobileNav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 350px;
+  height: 100vh;
+  background: #1a1f2c;
+  padding: 5rem 2rem 2rem;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+  border-left: 1px solid var(--border-light);
+}
+
+.mobileNav.open {
+  right: 0;
+}
+
+.mobileNavLink {
+  display: block;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border-light);
+  transition: color 0.2s;
+}
+
+.mobileNavLink:hover {
+  color: var(--text-primary);
+}
+
+.mobileRegister {
+  display: block;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  padding: 0.8rem 0;
+  margin: 1rem 0;
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+  text-align: center;
+}
+
+.mobileApply {
+  display: block;
+  text-decoration: none;
+  background: var(--accent);
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  border-radius: 30px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Mobile User Info */
+.mobileUserInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1rem;
+}
+
+.mobileUserAvatar {
+  width: 48px;
+  height: 48px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.mobileUserName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.mobileLogout {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 0.8rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+
+.mobileLogout:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+  }
+
+  .mobileNav {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 5%;
+  }
+  
+  .logoMark {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+  
+  .logoText {
+    font-size: 1.2rem;
+  }
+  
+  .logoTextAcademy {
+    font-size: 0.85rem;
+  }
+}

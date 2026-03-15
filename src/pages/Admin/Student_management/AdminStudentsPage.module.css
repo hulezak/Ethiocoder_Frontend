@@ -1,0 +1,552 @@
+/* src/pages/admin/AdminStudentsPage.module.css */
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 0.5rem 1rem;
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.95rem;
+  min-width: 250px;
+}
+
+.searchInput::placeholder {
+  color: #6b7280;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.filterSelect {
+  padding: 0.5rem 1rem;
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.95rem;
+  min-width: 150px;
+  cursor: pointer;
+}
+
+.filterSelect option {
+  background: #1a1f2c;
+  color: white;
+}
+
+.filterBtn, .resetBtn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.filterBtn {
+  background: #3b82f6;
+  color: white;
+}
+
+.filterBtn:hover {
+  background: #2563eb;
+}
+
+.resetBtn {
+  background: #2f3647;
+  color: #d1d5db;
+}
+
+.resetBtn:hover {
+  background: #3f4758;
+}
+
+/* Tables */
+.tableContainer {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 1rem;
+  background: #1e2433;
+  color: #9ca3af;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #2f3647;
+}
+
+.table td {
+  padding: 1rem;
+  color: #d1d5db;
+  border-bottom: 1px solid #2f3647;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: #1e2433;
+}
+
+/* Badges */
+.roleBadge, .statusBadge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.roleBadge.admin {
+  background: #3b82f6;
+  color: white;
+}
+
+.roleBadge.student {
+  background: #10b981;
+  color: white;
+}
+
+.roleBadge.ta {
+  background: #f59e0b;
+  color: white;
+}
+
+.statusBadge.approved {
+  background: #10b981;
+  color: white;
+}
+
+.statusBadge.pending {
+  background: #f59e0b;
+  color: white;
+}
+
+.statusBadge.rejected {
+  background: #ef4444;
+  color: white;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.viewBtn, .blockBtn {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.viewBtn {
+  background: #3b82f6;
+  color: white;
+}
+
+.viewBtn:hover {
+  background: #2563eb;
+}
+
+.blockBtn {
+  background: #ed8936;
+  color: white;
+}
+
+.blockBtn:hover {
+  background: #dd6b20;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1.5rem;
+  background: #1e2433;
+  color: white;
+  border: 1px solid #2f3647;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #2f3647;
+}
+
+.pagination button:disabled {
+  background: #2f3647;
+  color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination span {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #1a1f2c;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid #2f3647;
+}
+
+.modalContent h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.modalBody {
+  margin: 1rem 0;
+}
+
+.modalBody p {
+  margin: 0.5rem 0;
+  color: #d1d5db;
+}
+
+.modalBody strong {
+  color: white;
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.modalActions button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.modalActions button:last-child {
+  background: #3b82f6;
+  color: white;
+}
+
+.modalActions button:last-child:hover {
+  background: #2563eb;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.noData {
+  text-align: center;
+  padding: 2rem !important;
+  color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .searchInput, .filterSelect {
+    width: 100%;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+}
+
+/* Add these to your existing AdminStudentsPage.module.css */
+
+/* Form Group */
+.formGroup {
+  margin-bottom: 1.2rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 0.7rem;
+  background: #1e2433;
+  border: 1px solid #2f3647;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.formGroup input::placeholder {
+  color: #4b5563;
+}
+
+/* Edit Button */
+.editBtn {
+  background: #48bb78;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  min-width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editBtn:hover {
+  background: #38a169;
+  transform: translateY(-1px);
+}
+
+/* Update action buttons to be consistent */
+.viewBtn, .blockBtn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  min-width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewBtn {
+  background: #3b82f6;
+  color: white;
+}
+
+.viewBtn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.blockBtn {
+  background: #ed8936;
+  color: white;
+}
+
+.blockBtn:hover {
+  background: #dd6b20;
+  transform: translateY(-1px);
+}
+
+/* Actions container */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Modal styles - update if needed */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modalContent {
+  background: #1a1f2c;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid #2f3647;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.modalContent h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #2f3647;
+  padding-bottom: 0.8rem;
+}
+
+/* Modal Actions */
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.modalActions button {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.modalActions button[type="submit"] {
+  background: #3b82f6;
+  color: white;
+}
+
+.modalActions button[type="submit"]:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.modalActions button[type="button"] {
+  background: #2f3647;
+  color: #d1d5db;
+}
+
+.modalActions button[type="button"]:hover {
+  background: #3f4758;
+  transform: translateY(-1px);
+}
+
+/* Select options styling */
+select option {
+  background: #1a1f2c;
+  color: white;
+  padding: 0.5rem;
+}
+
+/* Disabled state for selects if needed */
+select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading state for buttons */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .viewBtn, .editBtn, .blockBtn {
+    width: 100%;
+  }
+  
+  .modalContent {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  
+  .modalActions {
+    flex-direction: column;
+  }
+  
+  .modalActions button {
+    width: 100%;
+  }
+}

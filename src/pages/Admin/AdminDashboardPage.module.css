@@ -1,0 +1,107 @@
+/* src/pages/admin/AdminDashboardPage.module.css */
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statIcon {
+  font-size: 2rem;
+}
+
+.statCard h3 {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.statCard p {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Recent Activity */
+.recentSection {
+  background: #1a1f2c;
+  border: 1px solid #2f3647;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.recentSection h2 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.activityItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: #1e2433;
+  border-radius: 8px;
+  color: #d1d5db;
+}
+
+.activityTime {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  min-width: 100px;
+}
+
+.noData {
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
