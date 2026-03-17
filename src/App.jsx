@@ -15,6 +15,7 @@ import AdminStudentsPage from './pages/Admin/Student_management/AdminStudents';
 import AdminCoursesPage from './pages/admin/Courses/AdminCourses';
 import AdminCohortsPage from './pages/admin/Cohorts/AdminCohorts';
 import AdminPhasesPage from './pages/admin/Phases/AdminPhasesPage';
+import CourseBrowser from './pages/Student/CourseBrowser';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           
           {/* Student route */}
-          <Route path="/student" element={<StudentDashboard />} />
+          <Route path="/student2" element={<StudentDashboard />} />
+          <Route path="/student" element={<CourseBrowser />} />
           
           {/* Admin routes with layout */}
           <Route path="/admin" element={<AdminLayout />}>
