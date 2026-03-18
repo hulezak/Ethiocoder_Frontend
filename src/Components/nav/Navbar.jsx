@@ -1,6 +1,7 @@
 // src/components/Navbar.jsx (keep your existing JSX, it's fine)
 import React, { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
+import Logo from '../../assets/icon.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -44,11 +45,11 @@ const Navbar = () => {
   };
 
   const getDashboardLink = () => {
-    if (!user) return '/dashboard';
+    if (!user) return '/';
     switch(user.role) {
       case 'admin': return '/admin';
       case 'ta': return '/ta';
-      default: return '/dashboard';
+      default: return '/student';
     }
   };
 
@@ -57,7 +58,7 @@ const Navbar = () => {
       <div className={styles.navbarContainer}>
         {/* Logo */}
         <a href="/" className={styles.logo}>
-          <div className={styles.logoMark}>EC</div>
+          <img src={Logo} alt="EthioCoders Academy Logo" className={styles.logoImage} />
           <div className={styles.logoText}>
             EthioCoders<span className={styles.logoTextAcademy}>Academy</span>
           </div>

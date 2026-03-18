@@ -27,7 +27,7 @@ const AdminCoursesPage = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/courses', {
+      const response = await fetch('https://ethiocoder-backned.onrender.com/api/admin/courses', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -42,7 +42,7 @@ const AdminCoursesPage = () => {
   const fetchCourseDetails = async (courseId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/courses/${courseId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/courses/${courseId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -57,7 +57,7 @@ const AdminCoursesPage = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/courses', {
+      const response = await fetch('https://ethiocoder-backned.onrender.com/api/admin/courses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ const AdminCoursesPage = () => {
   const handleUpdateCourse = async (courseId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/courses/${courseId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/courses/${courseId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

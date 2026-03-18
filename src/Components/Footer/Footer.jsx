@@ -2,7 +2,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import styles from './Footer.module.css';  // Import as styles object
-
+import Logo from '../../assets/icon.png';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -12,7 +12,7 @@ const Footer = () => {
         {/* About Section */}
         <div className={styles.footerAbout}>
           <div className={styles.footerLogo}>
-            <div className={styles.footerLogoMark}>EC</div>
+            <img src={Logo} alt="EthioCoders Academy Logo" className={styles.logoImage} />
             <div className={styles.footerLogoText}>EthioCoders Academy</div>
           </div>
           <p>

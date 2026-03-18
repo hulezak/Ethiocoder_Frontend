@@ -22,13 +22,13 @@ const AdminApprovalsPage = () => {
       const token = localStorage.getItem('token');
       
       const [pendingRes, coursesRes, cohortsRes] = await Promise.all([
-        fetch('http://localhost:5000/api/admin/students/pending', {
+        fetch('https://ethiocoder-backned.onrender.com/api/admin/students/pending', {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch('http://localhost:5000/api/admin/courses', {
+        fetch('https://ethiocoder-backned.onrender.com/api/admin/courses', {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch('http://localhost:5000/api/admin/cohorts', {
+        fetch('https://ethiocoder-backned.onrender.com/api/admin/cohorts', {
           headers: { 'Authorization': `Bearer ${token}` }
         })
       ]);
@@ -50,7 +50,7 @@ const AdminApprovalsPage = () => {
   const fetchStudentDetails = async (userId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/students/${userId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/students/${userId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -72,7 +72,7 @@ const AdminApprovalsPage = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/students/${userId}/approve`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/students/${userId}/approve`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ const AdminApprovalsPage = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/students/${userId}/reject`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/students/${userId}/reject`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });

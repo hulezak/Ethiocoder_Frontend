@@ -35,7 +35,7 @@ const AdminLayout = () => {
   const fetchPendingCount = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/students/pending', {
+      const response = await fetch('https://ethiocoder-backned.onrender.com/api/admin/students/pending', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();

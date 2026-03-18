@@ -58,7 +58,7 @@ const AdminPhasesPage = () => {
   const fetchCourseDetails = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/courses/${courseId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/courses/${courseId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -73,7 +73,7 @@ const AdminPhasesPage = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/courses/${courseId}/phases`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/courses/${courseId}/phases`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -88,7 +88,7 @@ const AdminPhasesPage = () => {
   const fetchSinglePhase = async (phaseId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/phases/${phaseId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/phases/${phaseId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -103,7 +103,7 @@ const AdminPhasesPage = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/phases', {
+      const response = await fetch('https://ethiocoder-backned.onrender.com/api/admin/phases', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -131,7 +131,7 @@ const AdminPhasesPage = () => {
   const handleUpdatePhase = async (phaseId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/phases/${phaseId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/phases/${phaseId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ const AdminPhasesPage = () => {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/phases/${phaseId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/phases/${phaseId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -181,7 +181,7 @@ const AdminPhasesPage = () => {
   const fetchWeeks = async (phaseId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/phases/${phaseId}/weeks`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/phases/${phaseId}/weeks`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -195,7 +195,7 @@ const AdminPhasesPage = () => {
   const fetchSingleWeek = async (weekId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/weeks/${weekId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/weeks/${weekId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -210,7 +210,7 @@ const AdminPhasesPage = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/weeks', {
+      const response = await fetch('https://ethiocoder-backned.onrender.com/api/admin/weeks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -241,7 +241,7 @@ const AdminPhasesPage = () => {
   const handleUpdateWeek = async (weekId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/weeks/${weekId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/weeks/${weekId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -266,7 +266,7 @@ const AdminPhasesPage = () => {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/weeks/${weekId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/weeks/${weekId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -287,7 +287,7 @@ const AdminPhasesPage = () => {
   const fetchVideos = async (weekId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/weeks/${weekId}/videos`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/weeks/${weekId}/videos`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -301,7 +301,7 @@ const AdminPhasesPage = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/videos', {
+      const response = await fetch('https://ethiocoder-backned.onrender.com/api/admin/videos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -332,7 +332,7 @@ const AdminPhasesPage = () => {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/videos/${videoId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/videos/${videoId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

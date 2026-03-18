@@ -45,7 +45,7 @@ const AdminStudentsPage = () => {
   const fetchCourses = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/courses', {
+      const response = await fetch('https://ethiocoder-backned.onrender.com/api/admin/courses', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -58,7 +58,7 @@ const AdminStudentsPage = () => {
   const fetchCohorts = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/cohorts', {
+      const response = await fetch('https://ethiocoder-backned.onrender.com/api/admin/cohorts', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -80,7 +80,7 @@ const AdminStudentsPage = () => {
         ...(filters.search && { search: filters.search })
       });
 
-      const response = await fetch(`http://localhost:5000/api/admin/students?${queryParams}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/students?${queryParams}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -102,7 +102,7 @@ const AdminStudentsPage = () => {
   const fetchStudentDetails = async (userId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/students/${userId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/students/${userId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -150,7 +150,7 @@ const handleEditSubmit = async (e) => {
       cohort_id: parseInt(editForm.cohort_id)
     };
     
-    const response = await fetch(`http://localhost:5000/api/admin/students/${editStudent.id}`, {
+    const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/students/${editStudent.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ const handleEditSubmit = async (e) => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/students/${userId}/block`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/students/${userId}/block`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });

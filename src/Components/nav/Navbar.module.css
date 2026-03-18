@@ -348,3 +348,8 @@
     font-size: 0.85rem;
   }
 }
+
+.logoImage{
+  height: 50px;
+  /* width: 40px; */
+}

@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home/Home';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
-import StudentDashboard from './pages/Dashboard/Dashboard';
 import './App.css';
 
 // Admin imports
@@ -15,7 +14,10 @@ import AdminStudentsPage from './pages/Admin/Student_management/AdminStudents';
 import AdminCoursesPage from './pages/admin/Courses/AdminCourses';
 import AdminCohortsPage from './pages/admin/Cohorts/AdminCohorts';
 import AdminPhasesPage from './pages/admin/Phases/AdminPhasesPage';
-import CourseBrowser from './pages/Student/CourseBrowser';
+
+// Student imports
+import StudentCoursePage from './pages/student/StudentCoursePage';
+// import StudentCourseDetail from './pages/student/StudentCourseDetail'; // We'll create this
 
 function App() {
   return (
@@ -27,9 +29,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           
-          {/* Student route */}
-          <Route path="/student2" element={<StudentDashboard />} />
-          <Route path="/student" element={<CourseBrowser />} />
+          {/* Student routes */}
+          <Route path="/student">
+            <Route index element={<StudentCoursePage />} />
+          </Route>
           
           {/* Admin routes with layout */}
           <Route path="/admin" element={<AdminLayout />}>
@@ -37,7 +40,7 @@ function App() {
             <Route path="approvals" element={<AdminApprovalsPage />} />
             <Route path="students" element={<AdminStudentsPage />} />
             <Route path="courses" element={<AdminCoursesPage />} />
-             <Route path="courses/:courseId/phases" element={<AdminPhasesPage />} />
+            <Route path="courses/:courseId/phases" element={<AdminPhasesPage />} />
             <Route path="cohorts" element={<AdminCohortsPage />} />
           </Route>
         </Routes>

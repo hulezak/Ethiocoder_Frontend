@@ -28,10 +28,10 @@ const AdminCohortsPage = () => {
       const token = localStorage.getItem('token');
       
       const [cohortsRes, coursesRes] = await Promise.all([
-        fetch('http://localhost:5000/api/admin/cohorts', {
+        fetch('https://ethiocoder-backned.onrender.com/api/admin/cohorts', {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch('http://localhost:5000/api/admin/courses', {
+        fetch('https://ethiocoder-backned.onrender.com/api/admin/courses', {
           headers: { 'Authorization': `Bearer ${token}` }
         })
       ]);
@@ -51,7 +51,7 @@ const AdminCohortsPage = () => {
   const fetchCohortDetails = async (cohortId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/cohorts/${cohortId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/cohorts/${cohortId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -66,7 +66,7 @@ const AdminCohortsPage = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/cohorts', {
+      const response = await fetch('https://ethiocoder-backned.onrender.com/api/admin/cohorts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const AdminCohortsPage = () => {
   const handleUpdateCohort = async (cohortId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/cohorts/${cohortId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/cohorts/${cohortId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ const AdminCohortsPage = () => {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/cohorts/${cohortId}`, {
+      const response = await fetch(`https://ethiocoder-backned.onrender.com/api/admin/cohorts/${cohortId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
